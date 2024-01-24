@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "perplexaty"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [
+    { include = "app" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+uvicorn = "^0.23.2"
+langserve = {extras = ["server"], version = ">=0.0.30"}
+pydantic = "<2"
+langchain-core = "^0.1.15"
+langchain-openai = "^0.0.3"
+langchain-exa = {git = "https://github.com/langchain-ai/langchain.git", rev = "erick/partner-exa", subdirectory = "libs/partners/exa"}
+
+
+[tool.poetry.group.dev.dependencies]
+langchain-cli = ">=0.0.15"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
