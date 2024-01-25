@@ -15,7 +15,7 @@ langserve = {extras = ["server"], version = ">=0.0.30"}
 pydantic = "<2"
 langchain-core = "^0.1.15"
 langchain-openai = "^0.0.3"
-langchain-exa = {git = "https://github.com/langchain-ai/langchain.git", rev = "erick/partner-exa", subdirectory = "libs/partners/exa"}
+langchain-exa = "^0.0.1"
 
 
 [tool.poetry.group.dev.dependencies]
