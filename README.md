@@ -61,7 +61,7 @@ docker build . -t my-langserve-app
 ```
 
 If you tag your image with something other than `my-langserve-app`,
-note it for use in the next step.
+note it for use in the next step. 
 
 ### Running the Image Locally
 
@@ -77,3 +77,18 @@ We also expose port 8080 with the `-p 8080:8080` option.
 ```shell
 docker run -e OPENAI_API_KEY=$OPENAI_API_KEY -p 8080:8080 my-langserve-app
 ```
+# Connecting a Client
+
+Example of invoking with `requests` in Python:
+
+```python
+import requests
+
+response = requests.post(
+    "http://localhost:8000/search/invoke",
+    json={'input': 'cats'}
+)
+response.json()
+```
+
+You can also use [`RemoteRunnable` from LangServe](https://github.com/langchain-ai/langserve?tab=readme-ov-file#client) if calling your server from python or javascript.
